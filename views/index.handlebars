@@ -1,0 +1,31 @@
+<h1>Reddit Scraper!</h1>
+
+<h2>Press the button below to scrape Reddit's front page</h2>
+
+<button id="scrape-reddit">SCRAPE!</button>
+<form action="/saved" method="get">
+  <button type="submit">Visit Saved Posts</button>
+</form>
+
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <div id="wrapper">
+      <h2>Reddit Posts</h2>
+      <div id="articles">
+        {{#each data}}
+        <p>{{title}} </p>
+        <p>{{_id}}</p>
+        <p>{{link}}</p>
+        <form action="/articles/{{_id}}" method="post">
+          <button type="submit">Save me!</button>
+        </form>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div id="notes"></div>
+  </div>
+</div>

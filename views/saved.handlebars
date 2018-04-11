@@ -1,0 +1,20 @@
+<h1>Reddit Scraper!</h1>
+
+<h2>View your saved posts below and write notes about them!</h2>
+
+<div id="wrapper">
+    <h2>Saved Articles</h2>
+    <div id="articles">
+        {{#each data}} {{#if saved}}
+        <p>{{title}} </p>
+        <p>{{_id}}</p>
+        <p>{{link}}</p>
+
+        <form action="/saved/{{_id}}" method="post">
+            <input id='titleinput' name='title'>
+            <textarea id='bodyinput' name='body'></textarea>
+            <button type="submit">Add notes!</button>
+        </form> {{/if}} {{/each}}
+    </div>
+
+</div>
